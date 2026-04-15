@@ -64,8 +64,8 @@ resource "aws_s3_object" "secret_image" {
   source = "image/financials.png"
 }
 resource "aws_s3_object" "second_image" {
-  bucket = "webapp-bucket-jackfruit"
-  key    = "Nothanlights.png"
-  source = "image/Nothanlights.png"
+  bucket       = aws_s3_bucket.webapp_bucket.id
+  key          = "Nothanlights.png"
+  source       = "image/Nothanlights.png"
   content_type = "image/png"
 }
